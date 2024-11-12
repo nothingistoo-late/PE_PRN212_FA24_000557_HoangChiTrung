@@ -1,0 +1,44 @@
+﻿<Window x:Class="PerfumeManagement_StudentCode.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:PerfumeManagement_StudentCode"
+        mc:Ignorable="d"
+       Title="Fall24PerfumeStoreDB" Height="685" Width="1265" Background="#FFF3CFCF" WindowStartupLocation="CenterScreen" ResizeMode="NoResize" Loaded="Window_Loaded"  >
+    <Grid>
+        <Label Content="Fall24PerfumeStoreDB" HorizontalAlignment="Left" Height="80" Margin="31,20,0,0" VerticalAlignment="Top" Width="569" FontWeight="Heavy" FontSize="50" FontStyle="Italic" Foreground="#FF3324A8"/>
+        <Label Content="ver. 24-FA" HorizontalAlignment="Left" Height="50" Margin="598,40,0,0" VerticalAlignment="Top" Width="275" FontSize="30" Foreground="#FF3324A8" FontStyle="Italic"/>
+        <Label x:Name="HelloMsgLabel" Content="Hello, Administrator" HorizontalAlignment="Left" Height="50" Margin="929,6,0,0" VerticalAlignment="Top" Width="315" FontSize="25" FontStyle="Italic" Style="{StaticResource YellowLabelStyle}" HorizontalContentAlignment="Right"/>
+
+        <Rectangle HorizontalAlignment="Left" Height="95" Margin="39,140,0,0" Stroke="Black" VerticalAlignment="Top" Width="1171" Fill="#ffff00" RadiusX="10" RadiusY="10" />
+        <Button x:Name="SearchButton" Content="Search Purfume" HorizontalAlignment="Left" Height="50" Margin="75,162,0,0" VerticalAlignment="Top" Width="262" TabIndex="2" Style="{StaticResource RedButtonStyle}" Click="SearchButton_Click"/>
+        <Label Content="Achiverments" HorizontalAlignment="Left" Height="45" Margin="388,169,0,0" VerticalAlignment="Top" Width="152" Foreground="#FF3324A8"/>
+        <TextBox x:Name="AchivermentsTextBox" HorizontalAlignment="Left" Height="45" Margin="547,165,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="303" TabIndex="0"/>
+        <Label Content="Name" HorizontalAlignment="Left" Height="45" Margin="905,169,0,0" VerticalAlignment="Top" Width="108" Foreground="#FF3324A8"/>
+        <TextBox x:Name="NameTextBox" HorizontalAlignment="Left" Height="45" Margin="1003,165,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="185" TabIndex="1"/>
+
+        <Button x:Name="CreateButton" Content="Add Player" HorizontalAlignment="Left" Height="50" Margin="1003,294,0,0" VerticalAlignment="Top" Width="185" TabIndex="3" Click="CreateButton_Click"/>
+        <Button x:Name="UpdateButton" Content="Update Player" HorizontalAlignment="Left" Height="50" Margin="1003,367,0,0" VerticalAlignment="Top" Width="185
+ " TabIndex="4" Click="UpdateButton_Click" />
+        <Button x:Name="DeleteButton" Content="Delete Player" HorizontalAlignment="Left" Height="50" Margin="1003,444,0,0" VerticalAlignment="Top" Width="185
+ " TabIndex="5" Click="DeleteButton_Click" />
+        <Button x:Name="QuitButton" Content="Quit" HorizontalAlignment="Left" Height="50" Margin="1003,540,0,0" VerticalAlignment="Top" Width="185" TabIndex="6" Click="QuitButton_Click" />
+
+        <DataGrid x:Name="PerfumeDataGrid" HorizontalAlignment="Left" Height="310" Margin="34,280,0,0" VerticalAlignment="Top" Width="958" AutoGenerateColumns="False" TabIndex="7" >
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="ID" Width="40" Binding="{Binding PerfumeId}" />
+                <DataGridTextColumn Header="Perfume Name" Width="200" Binding="{Binding PerfumeName}" />
+                <DataGridTextColumn Header="Ingredients" Width="70" Binding="{Binding Ingredients}" />
+                <DataGridTextColumn Header="Release Date" Width="100" Binding="{Binding ReleaseDate}" />
+                <DataGridTextColumn Header="Concentration" Width="100" Binding="{Binding Concentration}" />
+                <DataGridTextColumn Header="Longevity" Width="70" Binding="{Binding Longevity}" />
+                <DataGridTextColumn Header="Production Company Id" Width="70" Binding="{Binding ProductionCompanyId}" />
+                <DataGridTextColumn Header="Production Company" Width="140" Binding="{Binding ProductionCompany.ProductionCompanyName}" />
+            </DataGrid.Columns>
+        </DataGrid>
+
+       
+
+    </Grid>
+</Window>
