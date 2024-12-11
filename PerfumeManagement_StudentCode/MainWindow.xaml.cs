@@ -66,7 +66,7 @@ namespace PerfumeManagement_StudentCode
 
         private void QuitButton_Click(object sender, RoutedEventArgs e)
         {
-
+            Application.Current.Shutdown();
         }
 
         private void SearchButton_Click(object sender, RoutedEventArgs e)

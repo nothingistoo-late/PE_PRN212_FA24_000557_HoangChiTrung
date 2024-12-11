@@ -18,10 +18,10 @@
         <Label Content="Name" HorizontalAlignment="Left" Height="45" Margin="905,169,0,0" VerticalAlignment="Top" Width="108" Foreground="#FF3324A8"/>
         <TextBox x:Name="NameTextBox" HorizontalAlignment="Left" Height="45" Margin="1003,165,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="185" TabIndex="1"/>
 
-        <Button x:Name="CreateButton" Content="Add Player" HorizontalAlignment="Left" Height="50" Margin="1003,294,0,0" VerticalAlignment="Top" Width="185" TabIndex="3" Click="CreateButton_Click"/>
-        <Button x:Name="UpdateButton" Content="Update Player" HorizontalAlignment="Left" Height="50" Margin="1003,367,0,0" VerticalAlignment="Top" Width="185
+        <Button x:Name="CreateButton" Content="Add Perfume" HorizontalAlignment="Left" Height="50" Margin="1003,294,0,0" VerticalAlignment="Top" Width="185" TabIndex="3" Click="CreateButton_Click"/>
+        <Button x:Name="UpdateButton" Content="Update Perfume" HorizontalAlignment="Left" Height="50" Margin="1003,367,0,0" VerticalAlignment="Top" Width="185
  " TabIndex="4" Click="UpdateButton_Click" />
-        <Button x:Name="DeleteButton" Content="Delete Player" HorizontalAlignment="Left" Height="50" Margin="1003,444,0,0" VerticalAlignment="Top" Width="185
+        <Button x:Name="DeleteButton" Content="Delete Perfume" HorizontalAlignment="Left" Height="50" Margin="1003,444,0,0" VerticalAlignment="Top" Width="185
  " TabIndex="5" Click="DeleteButton_Click" />
         <Button x:Name="QuitButton" Content="Quit" HorizontalAlignment="Left" Height="50" Margin="1003,540,0,0" VerticalAlignment="Top" Width="185" TabIndex="6" Click="QuitButton_Click" />
 

@@ -23,6 +23,7 @@ namespace PerfumeManagement_StudentCode
     public partial class DetailWindow : Window
     {
         private PerfumeService _perfumeService = new();
+        private CompanyService _companyService = new();
         public PerfumeInformation EditedOne { get; set; }
         public DetailWindow()
         {
@@ -58,13 +59,18 @@ namespace PerfumeManagement_StudentCode
 
         private bool CheckVar()
         {
+            if (string.IsNullOrWhiteSpace(PerfumeIDTextBox.Text))
+            {
+                MessageBox.Show("PerfumeID Is Required!!", "Require Information", MessageBoxButton.OK, MessageBoxImage.Error);
+                return false;
+            }
             if (string.IsNullOrWhiteSpace(PerfumeNameTextBox.Text))
             {
                 MessageBox.Show("PerfumeName Is Required!!", "Require Information", MessageBoxButton.OK, MessageBoxImage.Error);
                 return false;
             }
 
-            if (PerfumeNameTextBox.Text.Trim().Length <= 5 || PerfumeNameTextBox.Text.Trim().Length >= 90)
+            if (PerfumeNameTextBox.Text.Trim().Length < 5 || PerfumeNameTextBox.Text.Trim().Length > 90)
             {
                 MessageBox.Show("PerfumeName Length Must Be >=5 and <= 90!!", "Require Information", MessageBoxButton.OK, MessageBoxImage.Error);
                 return false;
@@ -105,16 +111,38 @@ namespace PerfumeManagement_StudentCode
                 MessageBox.Show("Company ID Is Required!!", "Require Information", MessageBoxButton.OK, MessageBoxImage.Error);
                 return false;
             }
-
             return true;
 
         }
 
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
-            ProductionCompanyIDComboBox.ItemsSource = _perfumeService.GetAll();
+            ProductionCompanyIDComboBox.ItemsSource = _companyService.GetAllNCC();
             ProductionCompanyIDComboBox.DisplayMemberPath = "ProductionCompanyName";
-            ProductionCompanyIDComboBox.SelectedValuePath = "ProductionCompanyID";
+            ProductionCompanyIDComboBox.SelectedValuePath = "ProductionCompanyId";
+            if (EditedOne != null)
+                FillElement();
         }
+
+        private void FillElement()
+        {
+            PerfumeIDTextBox.Text = EditedOne.PerfumeId.ToString();
+            PerfumeNameTextBox.Text = EditedOne.PerfumeName;
+            IngredientsTextBox.Text = EditedOne.Ingredients;
+            ReleaseDateDatePicker.SelectedDate = EditedOne.ReleaseDate;
+            ConcentrationTextBox.Text = EditedOne.Concentration;
+            LongevityTextBox.Text = EditedOne.Longevity;
+            ProductionCompanyIDComboBox.SelectedValue = EditedOne.ProductionCompanyId;
+        }
+
+        private void QuitButton_Click(object sender, RoutedEventArgs e)
+        {
+            MessageBoxResult result = MessageBox.Show("Are You Sure Want To Exit!!!", "Exit!!!!", MessageBoxButton.OKCancel, MessageBoxImage.Question);
+            if (result == MessageBoxResult.OK)
+            {
+                Application.Current.Shutdown();
+            }
+        }
+
     }
 }
